@@ -239,18 +239,18 @@ async function loadMembers() {
 
     const data = await response.json();
 
-    const members = data.members.filter(member => member.visible === true);
+    const members = (data.members || []).filter(name => name && name.trim());
 
     if (members.length === 0) {
       container.innerHTML = "<p>Våra Synkare presenteras här snart!</p>";
       return;
     }
 
-    container.innerHTML = members.map(member => `
-      <div class="member">
-        💚 ${escapeHTML(member.name)}
-      </div>
-    `).join("");
+    container.innerHTML = members.map(name => `
+  <div class="member">
+    💚 ${escapeHTML(name)}
+  </div>
+`).join("");
 
   } catch (error) {
     console.error(error);
