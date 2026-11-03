@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#faf8f3">
+  <title>Synkat Podcast</title>
+  <meta name="description" content="Synkat Podcast – Mattias och Josef. Samtal, skratt och allt däremellan.">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <a href="#start" class="logo">SYNKAT<span>.</span></a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Öppna meny">
+      ☰
+    </button>
+
+    <nav class="navigation" id="navigation">
+      <a href="#start" class="nav-link active">Start</a>
+      <a href="#avsnitt" class="nav-link">Avsnitt</a>
+      <a href="#patreon" class="nav-link">Patreon</a>
+      <a href="#om-oss" class="nav-link">Om oss</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- STARTSIDA -->
+    <section id="start" class="page active-page">
+
+      <div class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">VÄLKOMMEN TILL SYNKAT PODCAST</span>
+          <h1>Vi är Synkat.<br>Är du?</h1>
+          <p>
+            Samtal, skratt och allt däremellan.
+            Häng med Mattias och Josef!
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#avsnitt" class="button lime-button">
+              LYSSNA NU →
+            </a>
+            <a href="#patreon" class="button outline-button">
+              BLI SYNKARE
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow pink-text">SENASTE SLÄPPET</span>
+            <h2>Senaste avsnittet 🎙️</h2>
+          </div>
+          <a href="#avsnitt" class="text-link">Alla avsnitt →</a>
+        </div>
+
+        <div id="latestEpisode" class="latest-episode">
+          <p>Hämtar senaste avsnittet...</p>
+        </div>
+      </div>
+
+      <section class="synkare-banner">
+        <span class="eyebrow">VÅRT FANTASTISKA COMMUNITY</span>
+        <h2>Tack till våra Synkare! 💚</h2>
+        <p>
+          Ni gör Synkat Podcast möjligt.
+          Vi uppskattar ert stöd enormt!
+        </p>
+        <a href="#patreon" class="button dark-button">
+          TRÄFFA VÅRA SYNKARE →
+        </a>
+      </section>
+
+      <div class="section social-section">
+        <h2>Hitta oss där du lyssnar</h2>
+        <div class="social-links">
+          <a href="https://www.youtube.com/@SynkatPodcast" target="_blank" rel="noopener">YouTube ↗</a>
+          <a href="https://open.spotify.com/show/7FA8CJrxPsqUjiNxIUiIrA" target="_blank" rel="noopener">Spotify ↗</a>
+          <a href="https://www.patreon.com/cw/SynkatPodcast?l=sv-SE" target="_blank" rel="noopener">Patreon ↗</a>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ALLA AVSNITT -->
+    <section id="avsnitt" class="page">
+
+      <div class="page-hero pink-hero">
+        <span class="eyebrow">SYNKAT PODCAST</span>
+        <h1>Alla avsnitt.</h1>
+        <p>Här hittar du alla våra avsnitt samlade på ett ställe.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-heading">
+          <h2>Avsnittsarkivet 🎧</h2>
+          <span id="episodeCount" class="episode-count"></span>
+        </div>
+
+        <input type="search" id="episodeSearch" class="search-input" placeholder="Sök efter ett avsnitt..."
+          aria-label="Sök avsnitt">
+
+        <div id="episodes" class="episode-grid">
+          <p>Hämtar avsnitt...</p>
+        </div>
+
+        <p id="episodeError" class="error-message"></p>
+      </div>
+
+    </section>
+
+
+    <!-- PATREON -->
+    <section id="patreon" class="page">
+
+      <div class="page-hero lime-hero">
+        <span class="eyebrow">COMMUNITY & STÖD</span>
+        <h1>Tack till våra Synkare! 💚</h1>
+        <p>
+          Ni är en viktig del av Synkat Podcast.
+          Tack för att ni är med oss!
+        </p>
+        <a href="https://www.patreon.com/cw/SynkatPodcast?l=sv-SE" target="_blank" rel="noopener"
+          class="button dark-button">
+          BLI EN AV VÅRA SYNKARE →
+        </a>
+      </div>
+
+      <div class="section">
+        <div class="section-heading">
+          <h2>Våra fantastiska medlemmar</h2>
+          <span class="eyebrow pink-text">TACK FÖR ERT STÖD</span>
+        </div>
+
+        <p class="member-intro">
+          Här hyllar vi alla våra Synkare som har valt
+          att synas på hemsidan.
+        </p>
+
+        <div id="members" class="member-grid">
+          <p>Hämtar våra Synkare...</p>
+        </div>
+
+        <div class="patreon-bottom">
+          <h2>Vill du också bli en Synkare?</h2>
+          <p>Stötta podden och bli en del av vårt community!</p>
+          <a href="https://www.patreon.com/cw/SynkatPodcast?l=sv-SE" target="_blank" rel="noopener"
+            class="button pink-button">
+            BESÖK VÅR PATREON →
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- OM OSS -->
+    <section id="om-oss" class="page">
+
+      <div class="page-hero pink-hero">
+        <span class="eyebrow">LÄR KÄNNA OSS</span>
+        <h1>Vilka är vi?</h1>
+        <p>Två personer, en podcast och massor att prata om.</p>
+      </div>
+
+      <div class="section about-content">
+        <h2>Mattias & Josef</h2>
+        <p>
+          Vi är Mattias och Josef, även kända som
+          Matinbum och Glooten.
+        </p>
+        <p>
+          Välkommen till Synkat Podcast!
+          Här samlar vi våra avsnitt, vårt community
+          och allt som händer kring podden.
+        </p>
+
+        <div class="social-links">
+          <a href="https://www.youtube.com/@SynkatPodcast" target="_blank" rel="noopener">YouTube ↗</a>
+          <a href="https://open.spotify.com/show/7FA8CJrxPsqUjiNxIUiIrA" target="_blank" rel="noopener">Spotify ↗</a>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+    <a href="#start" class="logo">SYNKAT<span>.</span></a>
+    <p>© <span id="year"></span> Synkat Podcast. Alla rättigheter förbehållna.</p>
+    <div class="footer-links">
+      <a href="#avsnitt">Avsnitt</a>
+      <a href="#patreon">Patreon</a>
+      <a href="#om-oss">Om oss</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>

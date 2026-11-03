@@ -1,0 +1,16 @@
+{
+  "members": [
+    {
+      "name": "Exempelmedlem 1",
+      "visible": true
+    },
+    {
+      "name": "Exempelmedlem 2",
+      "visible": true
+    },
+    {
+      "name": "Exempelmedlem 3",
+      "visible": false
+    }
+  ]
+}

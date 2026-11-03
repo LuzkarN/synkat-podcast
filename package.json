@@ -1,0 +1,8 @@
+{
+  "name": "synkat-podcast",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "episodes": "node fetch-episodes.js"
+  }
+}
