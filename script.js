@@ -144,6 +144,11 @@ function episodeHTML(episode) {
   const image = escapeHTML(episode.image);
   const date = escapeHTML(formatDate(episode.date));
 
+  const spotifyLink = episode.spotify ||
+    "https://open.spotify.com/search/" +
+    encodeURIComponent(episode.title + " Synkat Podcast") +
+    "/episodes";
+
   const youtubeLink = episode.youtube || YOUTUBE_URL;
   const youtubeText = episode.youtube ? "Se på YouTube ↗" : "YouTube-kanalen ↗";
 
@@ -163,9 +168,9 @@ function episodeHTML(episode) {
             ${youtubeText}
           </a>
 
-          ${episode.spotify
-      ? `<a href="${escapeHTML(episode.spotify)}" target="_blank" rel="noopener">Spotify ↗</a>`
-      : ""}
+          <a href="${escapeHTML(spotifyLink)}" target="_blank" rel="noopener">
+  Lyssna på Spotify ↗
+</a>
         </div>
       </div>
     </article>
