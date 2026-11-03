@@ -4,7 +4,7 @@ const API_KEY = process.env.YOUTUBE_API_KEY;
 const CHANNEL_ID = "UCOpKGabPGVdZtEaA8NkIWYA";
 
 // Kanalens "uploads"-spellista: UC... byts mot UU...
-const UPLOADS_PLAYLIST = "UU" + CHANNEL_ID.slice(2);
+const UPLOADS_PLAYLIST = "UULF" + CHANNEL_ID.slice(2);
 
 // Valfritt filter: lämna tom för att ta med ALLA uppladdningar.
 // Exempel: /avsnitt/i  => bara videor med "avsnitt" i titeln.
