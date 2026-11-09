@@ -2,11 +2,12 @@ name: Uppdatera avsnitt
 
 on:
   schedule:
-    - cron: "0 6 * * *"   # varje dag 06:00 UTC
-  workflow_dispatch:       # går att köra manuellt också
+    - cron: "0 6 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
 
 jobs:
   update:
@@ -26,3 +27,7 @@ jobs:
           git add episodes.json
           git diff --staged --quiet || git commit -m "Uppdatera avsnitt"
           git push
+      - name: Publicera hemsidan
+        run: gh api -X POST repos/${{ github.repository }}/pages/builds
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

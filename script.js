@@ -97,7 +97,7 @@ async function loadEpisodes() {
   const latestContainer = document.getElementById("latestEpisode");
 
   try {
-    const response = await fetch("episodes.json");
+    const response = await fetch("episodes.json?v=" + Date.now(), { cache: "no-store" });
 
     if (!response.ok) {
       throw new Error("Kunde inte hämta episodes.json");
@@ -236,7 +236,7 @@ async function loadMembers() {
   const container = document.getElementById("members");
 
   try {
-    const response = await fetch("members.json");
+    const response = await fetch("members.json?v=" + Date.now(), { cache: "no-store" });
 
     if (!response.ok) {
       throw new Error("Kunde inte hämta medlemslistan.");
