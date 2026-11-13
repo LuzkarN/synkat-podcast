@@ -8,6 +8,9 @@ const YOUTUBE_URL =
   "https://www.youtube.com/@SynkatPodcast";
 
 let allEpisodes = [];
+const EPISODES_PER_PAGE = 10;
+let currentList = [];
+let visibleCount = EPISODES_PER_PAGE;
 
 // ---------------------------
 // NAVIGATION
@@ -183,15 +186,30 @@ function episodeHTML(episode) {
 // ---------------------------
 
 function renderEpisodes(episodes) {
-  const container = document.getElementById("episodes");
+  currentList = episodes;
+  visibleCount = EPISODES_PER_PAGE;
+  drawEpisodes();
+}
 
-  container.innerHTML = episodes.length
-    ? episodes.map(episodeHTML).join("")
+function drawEpisodes() {
+  const container = document.getElementById("episodes");
+  const visible = currentList.slice(0, visibleCount);
+
+  container.innerHTML = visible.length
+    ? visible.map(episodeHTML).join("")
     : "<p>Inga avsnitt hittades.</p>";
 
   document.getElementById("episodeCount").textContent =
-    episodes.length + " avsnitt";
+    currentList.length + " avsnitt";
+
+  document.getElementById("loadMore").hidden =
+    visibleCount >= currentList.length;
 }
+
+document.getElementById("loadMore").addEventListener("click", () => {
+  visibleCount += EPISODES_PER_PAGE;
+  drawEpisodes();
+});
 
 
 // ---------------------------

@@ -442,6 +442,23 @@ a {
   font-size: 13px;
 }
 
+/* LADDA FLER */
+
+[hidden] {
+  display: none !important;
+}
+
+.load-more-wrap {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.load-more {
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 /* MOBILE */
 
 @media (max-width: 700px) {
@@ -469,6 +486,10 @@ a {
 
   .navigation.open {
     display: flex;
+  }
+
+  .logo img {
+    height: 38px;
   }
 
   .hero {
