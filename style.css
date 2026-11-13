@@ -1,5 +1,5 @@
 :root {
-  --pink: #ed4d77;
+  --pink: #FF0163;
   --red: #dc365d;
   --lime: #d8f477;
   --cream: #faf8f3;
@@ -55,8 +55,15 @@ a {
   color: var(--pink);
 }
 
+.logo img {
+  display: block;
+  height: 60px;
+  width: auto;
+}
+
 .navigation {
   display: flex;
+  align-items: center;
   gap: 30px;
 }
 
@@ -455,6 +462,7 @@ a {
     background: white;
     padding: 20px 7%;
     flex-direction: column;
+    align-items: center;
     gap: 18px;
     box-shadow: 0 8px 15px #00000010;
   }
@@ -498,4 +506,16 @@ a {
     flex-direction: column;
     text-align: center;
   }
+}
+
+.nav-merch {
+  background: var(--pink);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.nav-merch:hover {
+  color: white;
+  opacity: .9;
 }
