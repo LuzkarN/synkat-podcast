@@ -2,7 +2,8 @@ name: Uppdatera avsnitt
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "17 6 * * *"          # varje dag (extra säkerhet)
+    - cron: "2-59/5 4-6 * * 4"    # torsdagar var 5:e minut kl 04-06 UTC
   workflow_dispatch:
 
 permissions:
