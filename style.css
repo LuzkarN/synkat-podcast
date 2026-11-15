@@ -1,5 +1,5 @@
 :root {
-  --pink: #FF0163;
+  --pink: #FF015B;
   --red: #dc365d;
   --lime: #d8f477;
   --cream: #faf8f3;
@@ -117,13 +117,30 @@ a {
   color: white;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 40px;
   padding: 80px 10%;
   border-radius: 0 0 35px 35px;
   position: relative;
   overflow: hidden;
 }
 
-.hero::after {
+.hero-image {
+  width: 42%;
+  max-width: 460px;
+  max-height: 440px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image {
+  border-radius: 24px;
+  /*box-shadow: 0 12px 30px #00000030;*/
+  object-fit: cover;
+}
+
+/*.hero::after {
   content: "S.";
   position: absolute;
   right: 8%;
@@ -132,7 +149,7 @@ a {
   font-weight: 900;
   color: #ffffff12;
   pointer-events: none;
-}
+}*/
 
 .hero-content {
   max-width: 650px;
@@ -271,6 +288,45 @@ a {
 
 .episode-card:hover {
   transform: translateY(-4px);
+}
+
+/* SENASTE AVSNITTET (liggande kort på dator) */
+
+.latest-episode .episode-card {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  max-width: 1300px;
+}
+
+.latest-episode .episode-card img {
+  height: 100%;
+  min-height: 300px;
+  aspect-ratio: 16 / 9;
+}
+
+.latest-episode .episode-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px;
+}
+
+@media (max-width: 1100px) {
+  .latest-episode .episode-card {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-episode .episode-card img {
+    height: auto;
+    min-height: 0;
+  }
+
+}
+
+@media (max-width: 1200px) {
+  .hero-image {
+    display: none;
+  }
 }
 
 .episode-card img {
